@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Selectores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+                            <!-- Selectores simples -->
+
+    <!-- Selector tipo tag -->
+    <h1>Selectores CSS</h1>
+
+    <!-- Selector id  '#'-->
+    <p id="id">selector con id</p>
+
+    <!-- Selector tipo class -->
+    <p class="clase">Selector tipo class</p>
+
+    <!-- Selector por [atributo]-->
+    <a href="atributo">selector por [atributo]</a>
+
+    <!-- selector por [atributo="valor"] -->
+    <p title="atributo-valor">selector [atributo="valor"]</p>
+
+    <!-- selector [atributo] por primer palabra dentro valor '^' -->
+    <p aria-colspan="modo-col-span" >atributo primer palabra en valor</p>
+
+    <!-- Selector [atributo] por palabra contenida en valor '*' -->
+    <a href="acua-random-acc">atributo por palabra contenida en valor</a>
+    <a href="bac-ber-random">atributo por palabra contenida en valor</a>
+
+    <!-- Selector [atributo] por ultima palabra contenida en valor '$' -->
+    <br>
+    <a href="pod-fed-rim">atributo por ultima palabra contenida en valor</a>
+    <a href="cod-cdd-rim">atributo por ultima palabra contenida en valor</a>
+
+
+
+
+                            <!-- Selectores compuestos -->
+
+    <!-- Selectores agrupados -->
+    <p class="text-1">Selectores agrupados</p>
+    <p class="text-2">Selectores agrupados</p>
+    <p>selectores <span>agrupados</span></p>
+
+
+    <!-- por descendiente -->
+    <h2> <p> Por descendiente</p> </h2>
+
+    <!-- Hermano siguiente (+) -->
+    <h2 class="h-sig"> Hermano siguiente</h2>
+    <p> Hermano siguiente </p>
+
+    <!-- Hermanos siguientes (~) -->
+    <h2 class="h-sigts">Hermanos siguientes</h2>
+    <p>hermano siguiente 1</p>
+    <p>hermano siguiente 2</p>
+    <p>hermano siguiente 3</p>
+
+    <hr>
+
+    <!-- Hijo directo -->
+
+    <div class="hijo-directo">
+
+        <p>Hijo Directo 1</p>
+
+        <div>
+            <p>Hijo Indirecto</p>
+        </div>
+
+        <p>Hijo Directo 2</p>
+
+    </div>
+    
+</body>
+</html>

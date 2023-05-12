@@ -1,0 +1,244 @@
+/*SELECTORES
+    Selectores Simples:
+
+        -Selectores elementales: selectores basicos
+            
+                    Selector Universal (*) -> Agarra todos los elementos y cambia todo de acuerdo a la propiedad
+
+
+                                    sintaxis dentro de css es:
+
+                                    *{
+                                        color: red;
+                                    }
+
+                    
+                    Selector de tipo o etiqueta -> Modifica todos los elementos (por ejem 'h2' o cualquier elemento que deseemos) de nuestro codigo.
+
+
+                                    sintaxis dentro de css es:
+
+                                    h2{
+                                        color: blue;
+                                    }
+        
+        
+        
+        -Selectores de atributo
+            
+                    id (#): identificador UNICO 
+
+                                    su sintaxis dentro de html como  atributo:  id="nombre-identificador"
+                                    su sintaxis en css es: 
+
+                                    #nombre-identificador{
+                                        color: red;
+                                    }
+
+                    class(.): Modifica todos los elementos que contengan el atributo class="" dentro de sus tags
+
+                                    su sintaxis dentro de html es: class="subtitulo-h2", 
+                                    su sintaxis dentro de css es:
+
+                                    .subtitulo-h2{
+                                        color: blue;
+                                    }
+                    
+                    
+                    [atributo]: me permite seleccionar los atributos 
+                        
+                                    dentro de html en tag:  href
+                                    su sintaxis dentro de css es: 
+        
+                                    [href] {
+                                        color: red;
+                                    }
+
+                                
+                    [atributo="valor"]: me permite seleccionar los atributos junto con su valor 
+
+                                    dentro de html en tags:  nombre-cualquiera="lo-que-sea"
+                                    su sintaxis dentro de css es: 
+
+                                    [nombre-cualquiera="lo-que-sea"] {
+                                        color: red;
+                                    }
+
+                    
+                    [atributo^="valor"]: me permite seleccionar los atributos que EMPIECEN por el valor escrito 
+
+                                    dentro de html en tags aceptadas:  href="color-modo-random"
+                                    su sintaxis dentro de css es: 
+
+                                    [href^="color"] {
+                                        color: red;
+                                    }
+
+
+                    [atributo*="valor"]: me permite seleccionar los atributos que CONTENGAN el valor escrito, sin importar el orden en el que este (principio,en medio, final)
+
+                                    dentro de html en tags aceptadas:  href="color-modo-random"
+                                                                       href="lorem-dolor-modo"
+                                    su sintaxis dentro de css es: 
+
+                                    [href*="modo"] {
+                                        color: red;
+                                    }
+
+                    [atributo$="valor"]: me permite seleccionar los atributos que FINALICEN con el valor escrito
+
+                                    dentro de html en tag aceptada:  href="color-modo-random"
+                                    su sintaxis dentro de css es: 
+
+                                    [href*="random"] {
+                                        color: red;
+                                    }
+
+
+                
+
+
+    Selectores Compuestos: son aquellos que requieren mas de una palabra
+
+        -Selectores Agrupados
+
+                    Puedo agrupar selectores que necesiten el mismo estilo, esto me permite ahorrar codigo, por ejemplo si tengo varias clases y quiero aplicarles a todas un mismo color, sea:
+
+                                    .text,
+                                    span,
+                                    .text-3,
+                                    [href]{
+                                        color: red;
+                                    }
+        -Selectores Combinadores
+
+        Existe un termino dentro de la codificacion que se llama 'Descendencia', tenemos padres, hijos y hermanos. si tenemos etiquetas que esten en un mismo nivel se llaman hermanos, si una tag se encuentra dentro de otra tag este seria un hijo. en HTML la tag que es unicamente padre seria 'html' por que no es un hijo y no tiene hermanos, por lo tanto las demas pueden ser tanto padres, hijos y hermanos. 
+
+                    Por descendiente: Si tenemos tags dentro de tags, y queremos modificarlos dentro de css 
+
+                            Su sintaxis dentro de html es:  <h2> <p> Mi primer subtitulo </p> </h2>
+                            Su sintaxis dentro de css es:
+
+                            h2 p {
+                                color: red;
+                            }
+
+
+                    Hermano siguiente(+): Si queremos seleccionar al hermano siguiente apartir de un hermano anterior.
+
+                            Su sintaxis dentro de html es:  <h2 class="subtitulo"> hola Mundo </h2>
+                                                            <p> Mi primer subtitulo </p>
+                            Su sintaxis dentro de css es:
+
+                            .subtitulo  + p {
+                                color: red;
+                            }
+
+                    Hermanos siguientes (~): si queremos seleccionar a los hermanos siguientes apartir de un primer hermano 
+
+                            Su sintaxis dentro de html es:  <h2 class="subtitulo"> hola Mundo </h2>
+                                                            <p> Mi primer texto </p>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda, explicabo optio illo alias ipsam veritatis deleniti nulla, ex vitae dignissimos, libero natus quibusdam? Pariatur reiciendis consectetur autem eveniet hic!</p>
+
+                            Su sintaxis dentro de css es:
+
+                            .subtitulo  ~ p {
+                                color: red;
+                            }
+
+                    Hijo directo (>): si queremos seleccionar a los hijos directos. En este ejemplo se seleccionarian el primer <p> y el ultimo, ya que el que esta dentro del <div> si es un hijo, pero no directo
+
+                            Ejemplo dentro de html es:      <div class="Hijo-directo">
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni ipsum obcaecati? Perspiciatis nulla totam assumenda velit eius eaque nam, adipisci delectus nesciunt obcaecati. Sequi mollitia dolor deleniti perspiciatis nulla?</p>
+
+                                                                    <div>
+                                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores numquam quasi quisquam doloribus velit ullam. Labore itaque nam perspiciatis dolore! Quis sit, repellat delectus nobis voluptatum porro. Fugit, laborum sit?</p>
+                                                                    </div>
+
+                                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut tempore, facere excepturi fugit, vero est ipsum praesentium consequatur perferendis explicabo quia harum voluptatem, impedit repellendus unde totam accusantium odio provident?</p>
+
+                                                            </div>
+    
+
+                            Su sintaxis dentro de css es:
+
+                            .subtitulo  > p{
+                                color: red;
+                            }
+
+
+
+
+        -Pseudoclases - Pseudoelementos 
+*/
+
+/* Selector tipo tag */
+h1 {
+    color: red;
+}
+
+/* Slector tipo id */
+#id {
+    color: blue;
+}
+
+/* selector tipo class */
+.clase{
+    color: chartreuse;
+}
+
+/* Selector por atributo */
+[href]{
+    background-color: aqua;
+}
+
+/* selector por atributo + valor */
+[title="atributo-valor"]{
+    background-color: yellow;
+}
+
+/* Selector atributo primer palabra en valor */
+[aria-colspan^="modo"]{
+    background-color: darksalmon;
+}
+
+/* Selector atributo por palabra contenida en valor */
+[href*="random"]{
+    background-color: indigo;
+    color: red;
+}
+
+/* Selector [atributo] por ultima palabra contenida en valor  */
+[href$="rim"]{
+    background-color: red;
+    color: black;
+}
+
+
+/* Selectores agrupados */
+.text-1,
+.text-2,
+span{
+    color: orange;
+}
+
+/* descendiente */
+h2 p{
+    color: fuchsia;
+    background-color: black;
+}
+
+/* Hermano siguiente */
+.h-sig + p{
+    background-color: greenyellow;
+}
+
+/* Hermanos siguientes */
+.h-sigts ~ p{
+    background-color: blanchedalmond;
+}
+
+.hijo-directo > p{
+    background-color: darkkhaki;
+}
